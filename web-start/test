@@ -1,0 +1,26 @@
+POST /fcm/send HTTP/1.1
+Host: fcm.googleapis.com
+Content-Type: application/json
+Authorization: key=AAAAfQp0DHE:APA91bF9vT1GBdITxl85iD5yg9QgPDmcuBpTb_e8XEj76qxWmHZmEjsCDZc1LlDxPuSqaunH0ZAS_wyyj65dt8Z9DN0IZxaAb6ypzmaxTRZaIf2XQhCQcta7yW6cOSN_uj3fMwvonKH-
+
+{
+  "notification": {
+    "title": "New chat message!",
+    "body": "There is a new message in FriendlyChat",
+    "icon": "/images/profile_placeholder.png",
+    "click_action": "http://localhost:5000"
+  },
+  "to":"e_PHdmIEbTk:APA91bH60s-382Rweg7eOYspcIzEe1zAx8SHPVSh2HTzBW1u6f87FU-eoJe0i4d4P3gzF23QUoJFhs29XdiLCkf2nVZe_5NEdCW45E0nNbTlodjppHXDzddibiTIyhLdMboo9N6wOtv8"
+}
+curl -H "Content-Type: application/json" \
+     -H "Authorization: key=AAAAfQp0DHE:APA91bF9vT1GBdITxl85iD5yg9QgPDmcuBpTb_e8XEj76qxWmHZmEjsCDZc1LlDxPuSqaunH0ZAS_wyyj65dt8Z9DN0IZxaAb6ypzmaxTRZaIf2XQhCQcta7yW6cOSN_uj3fMwvonKH-" \
+     -d '{
+           "notification": {
+             "title": "New chat message!",
+             "body": "There is a new message in FriendlyChat",
+             "icon": "/images/profile_placeholder.png",
+             "click_action": "http://localhost:5000"
+           },
+           "to": "e_PHdmIEbTk:APA91bH60s-382Rweg7eOYspcIzEe1zAx8SHPVSh2HTzBW1u6f87FU-eoJe0i4d4P3gzF23QUoJFhs29XdiLCkf2nVZe_5NEdCW45E0nNbTlodjppHXDzddibiTIyhLdMboo9N6wOtv8"
+         }' \
+     https://fcm.googleapis.com/fcm/send
